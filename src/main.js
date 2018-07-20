@@ -9,7 +9,7 @@ import Vue from 'vue';
 
 
 //全局引入共用css
-import './styles/common.scss';
+import './styles/common.less';
 //引入字体样式
 import './styles/fonts/iconfont.css';
 //全局引入路由配置

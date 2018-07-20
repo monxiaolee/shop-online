@@ -89,9 +89,14 @@ module.exports = {
 					}
 				} */
 			},
+			// 原来样式用的是sass
+			// {
+			// 	test: /\.scss$/,
+			// 	loader: 'style-loader!css-loader!sass-loader'
+			// },
 			{
-				test: /\.scss$/,
-				loader: 'style-loader!css-loader!sass-loader'
+				test: /\.less$/,
+				loader: 'style-loader!css-loader!less-loader'
 			},
 			{
 				test: /\.json$/,
