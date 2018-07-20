@@ -5,9 +5,7 @@
             <ul class="welcome">
                 <li id="ECS_MEMBERZONE" v-if="userInfo.name">
                 <router-link :to="'/app/home/member/userinfo'">{{userInfo.name}}</router-link>
-                &nbsp;[
-                <a @click="loginOut">退出</a>
-                ]</li>
+                &nbsp;[<a @click="loginOut">退出</a>]</li>
                 <li id="ECS_MEMBERZONE" v-else>
                 <router-link :to="'/app/login'">请登录</router-link>
                 <s>|</s>
@@ -31,7 +29,7 @@
     <div class="hd_main cle">
         <div class="logo">
         <router-link to="/app/home/index" class="lizi_logo">
-            <img src="../../static/images/head/logo.gif" alt="慕学生鲜商城">
+            <!-- <img src="../../static/images/head/logo.gif" alt="装饰我们的家"> -->
         </router-link>
 
         </div>
@@ -45,6 +43,7 @@
             {{item.keywords}}
           </router-link>
         </div>
+        <!-- 
         <div class="intro">
             <ul>
                 <li class="no1"><a href="javascript:void(0);" target="_blank">
@@ -60,7 +59,8 @@
                     <p>闪电发货</p>
                 </a></li>
             </ul>
-        </div>
+        </div> 
+        -->
     </div>
     <div class="hd_nav">
         <div class="hd_nav_bd cle">
@@ -238,7 +238,7 @@ export default {
 
 }
 </script>
-<style scoped  lang='scss'>
+<style lang='less' scoped>
 html {
     background:#fafafa;
     color:#333;

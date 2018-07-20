@@ -1,25 +1,23 @@
 <template>
-    <div>
-    <div id="header">
-        <div class="hd_bar" id="userinfo-bar">
-            <div class="bd">
-                <div class="logo">
-                    <router-link :to="'/app/home/index'" >慕学生鲜商城</router-link>
-                </div>
-                <div class="hd_lbar" style="display: block;" id="ECS_MEMBERZONE">
-                     <router-link :to="'/app/home/index'"> 网站首页</router-link>
-                </div>
+<div id="header">
+    <div class="hd_bar" id="userinfo-bar">
+        <div class="bd">
+            <div class="logo">
+                <router-link :to="'/app/home/index'" >家纺城</router-link>
+            </div>
+            <div class="hd_lbar" style="display: block;" id="ECS_MEMBERZONE">
+                    <router-link :to="'/app/home/index'"> 网站首页</router-link>
             </div>
         </div>
     </div>
-    </div>
+</div>
 </template>
 
 <script>
 
 </script>
 
-<style scoped>
+<style lang="less" scoped>
 #header {
     width:100%
 }
@@ -38,7 +36,7 @@
     height:0;
     padding-top:68px;
     overflow:hidden;
-    background:#09c762 url(../../static/images/loginHead/flow_logo.png) center 0 no-repeat
+    // background:#09c762 url(../../static/images/loginHead/flow_logo.png) center 0 no-repeat
 }
 .hd_bar .bd {
     padding-left:182px;

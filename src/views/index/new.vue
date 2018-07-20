@@ -2,11 +2,11 @@
     <div>
         <div class="w-max ct bgwh mb30 ovh border-eee">
         <div class="newopro-l fl">
-          <a href=""><img src="../../static/images/new/xinpin.jpg" width="224" height="478"></a>
+          <!-- <a href=""><img src="../../static/images/new/xinpin.jpg" width="224" height="478"></a> -->
         </div>
         <div class="newopro-r fr">
             <h2 class="index-tt">
-                <em class="ft18 c000">刚出炉新品</em>
+                <em class="ft18 c000">最新推出</em>
                 <router-link to="/app/home/list/more" target = _blank><a  class="fr c666">更多&gt;&gt;</a></router-link>
             </h2>
             <ul class="newgoods_fastbuy">

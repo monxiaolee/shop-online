@@ -23,7 +23,7 @@
             </div>
             <div class="ft_txt">
                 <p class="ft_contact"> <span>服务时间：09:00-23:00</span>
-                    <span class="ft_phone">客服热线: <em>010-88888888</em></span>
+                    <span class="ft_phone">服务热线: <em>15201376369</em></span>
                 </p>
             </div>
         </div>

@@ -1,6 +1,4 @@
 <template>
-
-<div style="margin-top:0px;background: url(../../static/images/register/loginBg1.jpg)no-repeat">
 <div class="c-box bg-box" >
     <div class="login-box clearfix"style="margin-top:10px">
 
@@ -50,8 +48,8 @@
 <script>
 import { register ,getMessage} from '../../api/api'
 import cookie from '../../static/js/cookie';
-export default{
-    data(){
+export default {
+    data() {
         return{
             getMessageText:"免费获取验证码",
             mobile:'',
@@ -66,7 +64,7 @@ export default{
             }
         }
     },
-    methods:{
+    methods: {
         isRegister(){
             var that = this;
             register({
@@ -121,17 +119,17 @@ export default{
     }
 }
 </script>
-<style  scoped>
-  .error-text{
+<style lang="less" scoped>
+.error-text{
     color:#fa8341;
-  }
+}
 .c-box{
     width:100%;
     min-width: 1190px;
     overflow:hidden;
 }
 .bg-box{
-    background:url(../../static/images/register/loginBg1.jpg) no-repeat center center;
+    /* background:url(../../static/images/register/loginBg1.jpg) no-repeat center center; */
 }
 .login-box{
     width:853px;

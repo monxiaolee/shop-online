@@ -24,6 +24,8 @@
             <p class="error-text" v-show="error">{{error}}</p>
             <input class="btn btn-green" id="jsLoginBtn" type="button" @click = "login" value="立即登录 &gt; ">
           </form>
+          <!-- 
+          第三方登录
           <ul class="form other-form">
             <li>
               <h5>使用第三方帐号登录</h5>
@@ -33,7 +35,8 @@
               <a class="sina" href="http://shop.projectsedu.com:8001/login/weibo/"></a>
               <a class="weixin" href="http://shop.projectsedu.com:8001/login/weixin/"></a>
             </li>
-          </ul>
+          </ul> 
+          -->
           <p class="form-p">
             没有帐号？
             <router-link :to="'/app/register/'" target = _blank>[立即注册]</router-link>
@@ -168,7 +171,7 @@
     overflow:hidden;
   }
   .bg-box{
-    background:url(../../static/images/login/loginBg1.jpg) no-repeat center center;
+    /* background:url(../../static/images/login/loginBg1.jpg) no-repeat center center; */
   }
   .login-box{
     width:853px;
