@@ -42,6 +42,7 @@
           <router-link v-for="item in hotSearch" :to="'/app/home/search/'+item.keywords" :key="item.keywords">
             {{item.keywords}}
           </router-link>
+          <span @click="testMock">测试mock</span>
         </div>
         <!-- 
         <div class="intro">
@@ -212,7 +213,7 @@ export default {
           getCategory({
             params:{}
           }).then((response)=> {
-//                    console.log('获取菜单'+response)
+                    // console.log('获取菜单'+response)
                     this.allMenuLabel = response.data
                 })
                 .catch(function (error) {

@@ -25,7 +25,8 @@ export const getCategory = params => {
     return axios.get(`${local_host}/categorys/` + params.id + '/');
   }
   else {
-    return axios.get(`${local_host}/categorys/`, params);
+    // console.log(axios.get(`/getMenu`));
+    // return axios.get(`${local_host}/categorys/`, params);
   }
 };
 

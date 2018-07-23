@@ -76,7 +76,7 @@
 }
 
 </script>
-<style  lang='scss'>
+<style  lang='less'>
 html {
     /*background:#fafafa;*/
     color:#333;
