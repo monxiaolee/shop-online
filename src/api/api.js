@@ -16,7 +16,8 @@ export const newGoods = params => {
 
 //获取轮播图
 export const bannerGoods = params => {
-  return axios.get(`${host}/banners/`)
+  // return axios.get(`${host}/banners/`)
+  return axios.get(`/getBanner`)
 }
 
 //获取商品类别信息
