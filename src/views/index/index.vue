@@ -1,25 +1,25 @@
 <template>
     <div>
-        <banner></banner>
+        <!-- <banner></banner> -->
         <newP></newP>
-        <seriesList></seriesList>
+        <series-list></series-list>
     </div>
 </template>
 <script>
 //新品
 import newP from './new';
 //list
-import seriesList from './series-list';
+import SeriesList from './series-list';
 //banner
 import banner from './banners';
 
 export default {
     components:{
-        newP,seriesList,banner
+        newP,SeriesList,banner
     }
 }
 </script>
-<style  lang='scss'>
+<style lang='less' scoped>
 html {
     /*background:#fafafa;*/
     color:#333;

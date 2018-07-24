@@ -42,7 +42,6 @@
           <router-link v-for="item in hotSearch" :to="'/app/home/search/'+item.keywords" :key="item.keywords">
             {{item.keywords}}
           </router-link>
-          <span @click="testMock">测试mock</span>
         </div>
         <!-- 
         <div class="intro">
@@ -209,17 +208,17 @@ export default {
         outShopCar(){
             this.showShopCar = false;
         },
-        getMenu(){//获取菜单
-          getCategory({
-            params:{}
-          }).then((response)=> {
-                    // console.log('获取菜单'+response)
-                    this.allMenuLabel = response.data
-                })
-                .catch(function (error) {
-                  console.log(error);
-                });
-        },
+        // 获取菜单
+        // getMenu(){
+        //   getCategory({
+        //     params:{}
+        //   }).then((response)=> {
+        //             this.allMenuLabel = response.data
+        //         })
+        //         .catch(function (error) {
+        //           console.log(error);
+        //         });
+        // },
         getHotSearch(){//获取热搜
           getHotSearch()
                 .then((response)=> {
@@ -231,7 +230,8 @@ export default {
         }
     },
     created(){
-        this.getMenu()//获取菜单
+        // 获取菜单
+        // this.getMenu()
         this.getHotSearch()//获取热词
         // 更新store数据
         this.$store.dispatch('setShopList');//获取购物车数据

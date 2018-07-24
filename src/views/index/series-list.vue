@@ -1,50 +1,52 @@
 <template>
 <div>
-<div class="series_list" v-for="items in list">
-    <div class="series_box cle">
+    <div class="series_list" v-for="(items, index) in list" :key="index">
+        <div class="series_box cle">
+            
             <div class="series_info">
                 <div class="series_name name_hufu">
-                    <h2>{{items.name}}</h2>
+                    <h2>{{items.title}}</h2>
                 </div>
                 <ul class="brand">
-
-                    <li v-for="brand in items.brands">
-                       <router-link :to="'/app/home/list/'+brand.id" >
-                       <a :title="brand.name" target="_blank">
-                            <img :src="brand.image" :alt="brand.name" style="display: inline;">
-                        </a>
+                    <li v-for="(brand, index) in items.brands" :key="index">
+                        <router-link :to="'/app/home/list/'+brand.id" >
+                            <a :title="brand.name" target="_blank">
+                                <img :src="brand.image" :alt="brand.name" style="display: inline;">
+                            </a>
                         </router-link>
                     </li>
                 </ul>
                 <div class="brand_cata">
-                   <router-link  v-for="label in items.sub_cat" :key="label.id" :title="label.name"   :to="'/app/home/list/'+label.id"  >
+                   <router-link v-for="label in items.sub_cat" :key="label.id" :title="label.name" :to="'/app/home/list/'+label.id"  >
                     {{label.name}}
                     </router-link>
                 </div>
-
             </div>
-                <div class="series_pic">
-                    <router-link :to="'/app/home/productDetail/'+items.ad_goods.id" target = _blank>
-                       <img :src="items.ad_goods.goods_front_image" width="340" height="400">
-                    </router-link>
-                </div>
 
-                <div class="pro_list">
-                    <ul class="cle">
-                        <li v-for="list in items.goods">
-                             <router-link :to="'/app/home/productDetail/'+list.id" target = _blank>
-                                <p class="pic">
-                                 <img :src="list.goods_front_image" style="display: inline;">
-                                 </p>
-                                <h3>{{list.name}}</h3>
-                                <p class="price">
-                                    ￥{{list.shop_price}}元
+            <!-- 
+            <div class="series_pic">
+                <router-link :to="'/app/home/productDetail/'+items.ad_goods.id" target = _blank>
+                    <img :src="items.ad_goods.goods_front_image" width="340" height="400">
+                </router-link>
+            </div>
+
+            <div class="pro_list">
+                <ul class="cle">
+                    <li v-for="list in items.goods">
+                        <router-link :to="'/app/home/productDetail/'+list.id" target = _blank>
+                            <p class="pic">
+                                <img :src="list.goods_front_image" style="display: inline;">
                                 </p>
-                            </router-link>
-                         </li>
-
-                    </ul>
-                </div>
+                            <h3>{{list.name}}</h3>
+                            <p class="price">
+                                ￥{{list.shop_price}}元
+                            </p>
+                        </router-link>
+                    </li>
+                </ul>
+            </div> 
+            -->
+            
         </div>
     </div>
 </div>
@@ -52,23 +54,22 @@
 <script>
     import { queryCategorygoods } from '../../api/api';
     export default {
-        data(){
-            return {
-                list:[]
-            }
-        },
-        methods:{
-            getList(){
-              queryCategorygoods()
-                .then((response)=> {
-                   //跳转到首页页response.body面
-                  console.log(response)
-                    this.list = response.data
-                })
-                .catch(function (error) {
-                  console.log(error);
-                });
-            }
+    data(){
+        return {
+            list: []
+        }
+    },
+    methods:{
+        getList(){
+            queryCategorygoods()
+            .then((response)=> {
+                //跳转到首页页response.body面   
+                this.list = response.data
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+        }
     },
     created(){
         this.getList();
@@ -76,7 +77,7 @@
 }
 
 </script>
-<style  lang='less'>
+<style lang='less' scoped>
 html {
     /*background:#fafafa;*/
     color:#333;

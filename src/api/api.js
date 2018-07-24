@@ -6,7 +6,7 @@ let local_host = 'http://127.0.0.1:8000';
 
 //获取商品类别信息
 export const queryCategorygoods = params => {
-  return axios.get(`${host}/indexgoods/`)
+  return axios.get(`/getIndexList`)
 }
 
 //获取首页中的新品
@@ -35,6 +35,11 @@ export const getCategory = params => {
 //获取热门搜索关键词
 export const getHotSearch = params => {
   return axios.get(`${host}/hotsearchs/`)
+}
+
+// 获取首页商品（新品）
+export const getOpro = params => {
+  return axios.get(`/getOpro`, {params: params})
 }
 
 //获取商品列表

@@ -36,6 +36,16 @@
 
                     </div>
                     <input class="btn btn-green" id="jsMobileRegBtn" @click="isRegister" type="button" value="注册并登录">
+
+                    <div class="auto-box marb8">
+
+                    </div>
+                    {{modalObj}}
+
+                    <Select :label="optionLabel" style="width:200px">
+                        <Option v-for="item in cityList" :label="item.value" :key="item.label">{{ item.label }}</Option>
+                    </Select>
+
                 </form>
             </div>
 
@@ -51,6 +61,40 @@ import cookie from '../../static/js/cookie';
 export default {
     data() {
         return{
+
+            cityList: [
+                {
+                    value: 'New York',
+                    label: 'New York'
+                },
+                {
+                    value: 'London',
+                    label: 'London'
+                },
+                {
+                    value: 'Sydney',
+                    label: 'Sydney'
+                },
+                {
+                    value: 'Ottawa',
+                    label: 'Ottawa'
+                },
+                {
+                    value: 'Paris',
+                    label: 'Paris'
+                },
+                {
+                    value: 'Canberra',
+                    label: 'Canberra'
+                }
+            ],
+            modalObj: {
+                type: Object
+            },
+            model1: '123',
+            optionLabel: 'Ottawa',
+
+
             getMessageText:"免费获取验证码",
             mobile:'',
             password:'',
@@ -65,6 +109,9 @@ export default {
         }
     },
     methods: {
+        modelInt() {
+            this.modalObj.value = '123456'
+        },
         isRegister(){
             var that = this;
             register({
@@ -116,6 +163,9 @@ export default {
           });
 
         }
+    },
+    mounted() {
+        this.modelInt()
     }
 }
 </script>
