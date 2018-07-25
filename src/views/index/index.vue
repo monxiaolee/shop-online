@@ -1,6 +1,6 @@
 <template>
     <div>
-        <!-- <banner></banner> -->
+        <banner></banner>
         <newP></newP>
         <series-list></series-list>
     </div>

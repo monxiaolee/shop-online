@@ -2,7 +2,7 @@
     <div>
         <div class="w-max ct bgwh mb30 ovh border-eee">
         <div class="newopro-l fl">
-            <!-- <a href=""><img src="../../static/images/new/xinpin.jpg" width="224" height="478"></a> -->
+            <a href=""><img src="../../static/images/new/newgoods01.jpg" width="224" height="478"></a>
         </div>
         <div class="newopro-r fr">
             <h2 class="index-tt">
@@ -36,7 +36,7 @@
 
 </template>
 <script>
-import { getOpro } from '../../api/api';
+import { newGoods } from '../../api/api';
 export default{
     data(){
         return {
@@ -45,11 +45,9 @@ export default{
     },
     methods:{
         getOproNew(){
-
-            getOpro({"is_new": "true"}).then((response) => {
+            newGoods().then((response) => {
                 //跳转到首页response.body面
-                this.newopro = response.data.results
-                console.log(this.newopro)
+                this.newopro = response.data
             }).catch(function(error) {
                 console.log(error)
             });
@@ -62,7 +60,7 @@ export default{
 
 }
 </script>
-<style  lang='scss'>
+<style lang='less' scoped>
 html {
     /*background:#fafafa;*/
     color:#333;

@@ -7,13 +7,17 @@ var indexList = require('./mock/seriesList.js');
 var banners = require('./mock/banner.js');
 var menu = require('./mock/menu.js');
 var hotSearch = require('./mock/hotSearch.js');
+let newgoods = require('./mock/newgoods.js');
 
 Mock.mock('/login',login)//登录
-Mock.mock('/getOpro',newOpro)//首页新品
+// Mock.mock('/getOpro', newOpro)//首页新品
+Mock.mock('/getOpro', newOpro)
 Mock.mock('/getIndexList',indexList)//首页list
 Mock.mock('/getBanner',banners)//首页banner
-Mock.mock('/getMenu',menu)//首页menu
+Mock.mock('/getAllMenu',menu)//首页menu
 Mock.mock('/getHotSearch',hotSearch)//首页热搜
+// 首页新品
+Mock.mock('/newgoods', newgoods)
 
 Mock.mock('/product/details', // 商品详情数据
     {
@@ -113,7 +117,6 @@ Mock.mock('/getReceiveInfo', // 收件人信息
         }
     ]
 )
-
 
 Mock.mock('/addReceiveInfo', // 添加收获人信息
     {}
@@ -355,26 +358,8 @@ Mock.mock('/currentLoc',
         },
         {
             id: 232,
-            name: '酒水饮料',
-        },
-        {
-            id: 456,
-            name: '粮油副食',
-        },
-        {
-          id: 56,
-          name: '休闲食品',
-        },
-        {
-          id: 6,
-          name: '蔬菜水果',
-        },
-        {
-          id: 7,
-          name: '奶类食品',
+            name: '窗帘',
         }
-
-
     ]
 )
 Mock.mock('/priceRange',

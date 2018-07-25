@@ -1,7 +1,7 @@
 import axios from "axios";
 
 
-let host = 'http://shop.projectsedu.com';
+let host = 'http://best1202.com';
 let local_host = 'http://127.0.0.1:8000';
 
 //获取商品类别信息
@@ -11,7 +11,13 @@ export const queryCategorygoods = params => {
 
 //获取首页中的新品
 export const newGoods = params => {
-  return axios.get(`${host}/newgoods/`)
+  return axios.get(`/newgoods`)
+}
+
+// 获取首页全部商品菜单
+export const getAllMenu = params => {
+  // return axios.get(`${host}/banners/`)
+  return axios.get(`/getAllMenu`)
 }
 
 //获取轮播图

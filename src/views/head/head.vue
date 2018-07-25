@@ -66,14 +66,17 @@
         <div class="hd_nav_bd cle">
             <div class="main_nav main_nav_hover" id="main_nav">
                 <div class="main_nav_link" @mouseover="overAllmenu" @mouseout="outAllmenu">
-                    <a class="meunAll">全部商品分类
+                    <a class="meunAll">
+                        全部商品分类
                         <i class="iconfont">&#xe643;</i>
                     </a>
                     <div class="main_cata" id="J_mainCata" v-show="showAllmenu">
                         <ul>
-                            <li v-if="item.category_type === 1" class="first" v-for="(item,index) in allMenuLabel" @mouseover="overChildrenmenu(index)" @mouseout="outChildrenmenu(index)">
-                              <h3 style="">
-                                <router-link :to="'/app/home/list/'+item.id">{{item.name}}</router-link> </h3>
+                            <li class="first" v-for="(item, index) in allMenuLabel" :key="index" @mouseover="overChildrenmenu(index)" @mouseout="outChildrenmenu(index)">
+                                <h3 style="">
+                                    <router-link :to="'/app/home/list/' + item.id">{{item.name}}</router-link> 
+                                </h3>
+                                <!-- 
                                 <div class="J_subCata" id="J_subCata" v-show="showChildrenMenu ===index"  style=" left: 215px; top: 0px;">
                                     <div class="J_subView" >
                                       <div v-for="list in item.sub_cat">
@@ -89,7 +92,8 @@
                                         <div class="clear"></div>
                                       </div>
                                     </div>
-                                </div>
+                                </div> 
+                                -->
                             </li>
                         </ul>
                     </div>
@@ -137,7 +141,7 @@
 <script>
 import { mapGetters } from 'vuex';
 import cookie from '../../static/js/cookie';
-import { getHotSearch, getCategory ,deleteShopCart } from  '../../api/api'
+import { getHotSearch, getCategory ,deleteShopCart, getAllMenu } from  '../../api/api'
 export default {
     data(){
         return {
@@ -209,16 +213,17 @@ export default {
             this.showShopCar = false;
         },
         // 获取菜单
-        // getMenu(){
-        //   getCategory({
-        //     params:{}
-        //   }).then((response)=> {
-        //             this.allMenuLabel = response.data
-        //         })
-        //         .catch(function (error) {
-        //           console.log(error);
-        //         });
-        // },
+        getMenu(){
+          getAllMenu({
+            params:{}
+          }).then((response)=> {
+                    this.allMenuLabel = response.data
+                    console.log(this.allMenuLabel)
+                })
+                .catch(function (error) {
+                  console.log(error);
+                });
+        },
         getHotSearch(){//获取热搜
           getHotSearch()
                 .then((response)=> {
@@ -231,7 +236,7 @@ export default {
     },
     created(){
         // 获取菜单
-        // this.getMenu()
+        this.getMenu()
         this.getHotSearch()//获取热词
         // 更新store数据
         this.$store.dispatch('setShopList');//获取购物车数据

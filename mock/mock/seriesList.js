@@ -1,6 +1,6 @@
 module.exports = [
   {
-    title:'生鲜食品',
+    title:'窗帘',
     brand:[
       {
         img:'http://sx.youxueshop.com/data/brandlogo/1447706160927101013.jpg',
@@ -90,7 +90,7 @@ module.exports = [
 
   },
   {
-    title:'蔬菜水果',
+    title:'被单',
     brand:[
       {
         img:'http://sx.youxueshop.com/data/brandlogo/1447704682791039878.jpg',
@@ -172,7 +172,7 @@ module.exports = [
 
   },
   {
-    title:'粮油副食',
+    title:'抱枕',
     brand:[
       {
         img:'http://sx.youxueshop.com/data/brandlogo/1447705943471297107.jpg',
@@ -255,7 +255,7 @@ module.exports = [
   },
 
   {
-    title:'酒水饮料',
+    title:'绿植',
     brand:[
       {
         img:'http://sx.youxueshop.com/data/brandlogo/1447706126626614178.jpg',
