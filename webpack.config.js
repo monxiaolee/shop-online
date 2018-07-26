@@ -61,43 +61,16 @@ module.exports = {
 			{
 				test: /\.vue$/,
 				loader: 'vue-loader',
-				/*
-				options: {
-					loaders: {
-						css: ExtractTextPlugin.extract({
-							use: 'css-loader',
-							fallback: 'vue-style-loader'
-						})
-					}
-				} */
 			},
-			{
-				test: /\.css$/,
-				/*
-				use: ExtractTextPlugin.extract({
-					use: 'css-loader',
-					fallback: 'style-loader'
-				}) */
-				loader: 'style-loader!css-loader'
-				/*
-				loader: 'style-loader!css-loader',
-				options: {
-					loaders: {
-						css: ExtractTextPlugin.extract({
-							use: 'css-loader'
-						})
-					}
-				} */
-			},
-			// 原来样式用的是sass
-			// {
-			// 	test: /\.scss$/,
-			// 	loader: 'style-loader!css-loader!sass-loader'
-			// },
 			{
 				test: /\.less$/,
-				loader: 'style-loader!css-loader!less-loader'
+				loaders: ["style-loader", "css-loader", "less-loader"]
+			}, 
+			{
+				test: /\.css$/,
+				loaders: ["style-loader", "css-loader"]
 			},
+
 			{
 				test: /\.json$/,
 				loader: 'json-loader'
